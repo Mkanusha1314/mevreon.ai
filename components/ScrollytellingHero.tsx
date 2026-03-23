@@ -83,9 +83,9 @@ const STORY_BEATS: StoryBeat[] = [
 
 const FRAME_IMAGES = [
     '/sequence/frame_01.png',
-    '/sequence/frame_02.png',
-    '/sequence/frame_03.png',
-    '/sequence/frame_04.png',
+    '/sequence/frame_011.png',
+    '/sequence/frame_033.png',
+    '/sequence/frame_044.png',
     '/sequence/frame_03.png',
     '/sequence/frame_05.png',
 ];
@@ -1156,7 +1156,7 @@ const ScrollytellingHero: React.FC<ScrollytellingHeroProps> = ({ onComplete }) =
                 >
                     <canvas
                         ref={canvasRef}
-                        className="absolute inset-0 w-full h-full pointer-events-none select-none"
+                        className="absolute top-40 right-0 h-full w-full md:w-[60%] pointer-events-none select-none"
                         onContextMenu={(e) => e.preventDefault()}
                     />
 
@@ -1219,7 +1219,7 @@ const ScrollytellingHero: React.FC<ScrollytellingHeroProps> = ({ onComplete }) =
                                     beat.align === 'right' ? 'text-right' : 'text-center'
                                     }`}>
                                     {beat.title && (
-                                        <h2 className={`text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-white leading-[1.1] mb-6 tracking-tight drop-shadow-2xl ${beat.align === 'center' || isMobile ? 'text-center mx-auto' :
+                                        <h2 className={`text-2xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-white leading-[1.1] mb-6 tracking-tight drop-shadow-2xl ${beat.align === 'center' || isMobile ? 'text-center mx-auto' :
                                             beat.align === 'right' ? 'text-right ml-auto' : 'text-left mr-auto'
                                             }`}>
                                             {beat.title.split(" ").map((word, w_i) => (
@@ -1237,7 +1237,7 @@ const ScrollytellingHero: React.FC<ScrollytellingHeroProps> = ({ onComplete }) =
                                         <div className={`relative mb-8 max-w-xl lg:max-w-2xl xl:max-w-3xl ${beat.align === 'center' || isMobile ? 'mx-auto' : beat.align === 'right' ? 'ml-auto' : 'mr-auto'}`}>
                                             <div className="absolute inset-0 bg-white/10 backdrop-blur-2xl border border-white/20 shadow-[0_8px_32px_rgba(6,182,212,0.4),inset_0_1px_0_rgba(255,255,255,0.2)] rounded-xl pointer-events-none md:hidden" />
 
-                                            <p className={`relative text-base md:text-lg lg:text-2xl text-white/90 leading-relaxed font-light px-6 py-4 md:py-0 
+                                            <p className={`relative text-sm md:text-base lg:text-xl text-white/90 leading-relaxed font-light px-6 py-4 md:py-0 
                                                 ${beat.align === 'center' ? 'text-center md:px-0' :
                                                     beat.align === 'right' ? 'text-right md:border-r-[3px] md:border-cyan-500/50 md:pr-6 md:pl-0' :
                                                         'text-left md:border-l-[3px] md:border-cyan-500/50 md:pl-6 md:pr-0'

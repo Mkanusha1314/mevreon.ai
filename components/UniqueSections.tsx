@@ -30,9 +30,7 @@ export const TeamSection = () => {
             ],
             award: [
                 "Gordon Bell Prize Winner(COVID-19 therapeutics)",
-                "Best Paper Award(SC",
-                "MLSys",
-                "ICLR)"
+                "Best Paper Award(SC,MLSys,ICLR)"
             ],
             img: ""
         },
@@ -41,13 +39,11 @@ export const TeamSection = () => {
             role: "Co-Founder",
             experience: [
                 "Research Scientist - AI & GPU/LLM System Architecture(TBA Research Lab)",
-                "15+ years in Simulation/Modelling",
-                "McKinsey"
+                "15+ years in Simulation/Modelling"
+                
             ],
             award: [
-                "Best Paper Award(AI/HPC",
-                "ISCA",
-                "MIRCO)",
+                "Best Paper Award(AI/HPC,ISCA,MIRCO)",
                 "PhD in CS(UMass Amherst USA)"
             ],
             img: ""
@@ -59,11 +55,8 @@ export const TeamSection = () => {
                 "Serial enterprenuer - fintech/edtech",
                 "GTM & ops",
                 "Product head roles at leading fintech",
-                "Deep expertise in marketing",
-                "startegy",
-                "Partnerships",
-                "fundraising",
-                "growth"
+                "Deep expertise in marketing,startegy",
+                "Partnerships,fundraising,growth"
             ],
             award: [],
             img: "/Tushar.png"

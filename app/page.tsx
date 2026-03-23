@@ -11,67 +11,67 @@ import ProjectPyramid from "../components/ProjectPyramid";
 const advisoryMembers = [
   {
     id: 1,
-    name: "Dr. Jane Doe",
-    role: "Chief Medical Advisor",
-    details: "Expert in longitudinal state simulation and clinical trial operations with 20+ years of experience in biotech.",
-    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Scott Clark",
+        role: "CEO of Distributional",
+        details: "Former VP/GM at Intel; CEO of SigOpt (acquired by Intel).",
+    image: "/advisory/scott clark.jpeg",
+        linkedin: "https://linkedin.com/in/sc932"
   },
   {
     id: 2,
-    name: "John Smith, PhD",
-    role: "AI Ethics & Data Privacy",
-    details: "Former VP of Data Privacy at a leading pharma company. Architect of privacy-first sharing models and compliance systems.",
-    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Madhusudan Srinivasan",
+        role: "Assistant Professor",
+        details: "East Carolina University.",
+    image: "/advisory/sample profile.png",
+        linkedin: "https://linkedin.com/in/madhusudan-srinivasan-97871224"
   },
   {
     id: 3,
-    name: "Sarah Jenkins, MD",
-    role: "Head of Clinical Operations",
-    details: "Pioneer in operationalizing multimodal clinical data into repeatable, auditable decision outputs for modern trial design.",
-    image: "https://images.unsplash.com/photo-1594824436998-05f226041f83?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Piyush Sadana",
+        role: "Founder | CEO | Board Member | Angel Investor",
+        details: "Ex Norges Bank Investment Management, M&T Bank, Infosys.",
+    image: "/advisory/sample profile.png",
+        linkedin: "https://linkedin.com/in/piyushsadana"
   },
   {
     id: 4,
-    name: "Dr. Michael Chen",
-    role: "Lead Biostatistician",
-    details: "Specializes in mechanistic priors and data-driven learning to build highly interpretable and robust simulation models.",
-    image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Christiaan Erik Rijnders",
+        role: "Founder & CEO",
+        details: "Stealth mode.",
+    image: "/advisory/christian.jpeg",
+        linkedin: "https://linkedin.com/in/rijnders"
   },
   {
     id: 5,
-    name: "Emily Nakamura",
-    role: "Digital Twin Strategist",
-    details: "Led the development of scalable Executable Patient Twins across multiple leading global biotech and pharma startups.",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Milind Hanchinmani",
+        role: "Education Administration",
+        details: "Ex-Intel Senior Director; builds high performing global teams; performance analysis products dev; AI; HPC.",
+    image: "/advisory/sample profile.png",
+        linkedin: "https://linkedin.com/in/milind-hanchinmani"
   },
   {
     id: 6,
-    name: "Dr. Robert Foster",
-    role: "Clinical Trial Strategist",
-    details: "Advises on deploying simulation-backed decisions as a standard layer in clinical operations and early risk detection.",
-    image: "https://images.unsplash.com/photo-1537368910025-702800faa86b?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Amit Mathur",
+        role: "CIO & Transformation Leader",
+        details: "Former GCC Head; Board Advisor; Cornell Johnson; IIT BHU; scaling life sciences with data, AI & secure platforms.",
+    image: "/advisory/sample profile.png",
+        linkedin: "https://linkedin.com/in/mathur-amit"
   },
   {
     id: 7,
-    name: "Laura Thompson",
-    role: "Regulatory Affairs",
-    details: "Over a decade of experience ensuring audit-ready evidence packs for trial teams, CROs, and global regulatory bodies.",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Dr. Dinesh",
+        role: "Vice President, Clinical Research & Innovations",
+        details: "TX Hospitals Group.",
+    image: "/advisory/Dinesh.jpeg",
+        linkedin: "https://linkedin.com/in/dr-dinesh-79b341105"
   },
   {
     id: 8,
-    name: "David Park, MSc",
-    role: "Product Innovation Lead",
-    details: "Focuses on unifying physics and AI to move beyond black-box predictions and deliver actionable operational impacts.",
-    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=300&h=300&auto=format&fit=crop",
-    linkedin: "https://linkedin.com/in/#"
+        name: "Dr. Ankit Agarwal",
+        role: "Consultant Dermatologist, Cosmetologist & Hair Transplant Surgeon",
+        details: "Cosmoderm Clinic",
+        image: "/advisory/Ankit Aggarwal.jpeg",
+        linkedin: "https://linkedin.com/in/dr-ankit-agrawal-469a2a388"
   }
 ];
 
