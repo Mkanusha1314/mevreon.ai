@@ -383,12 +383,24 @@ const ScrollytellingHero: React.FC<ScrollytellingHeroProps> = ({ onComplete }) =
             return 0;
         };
 
+        const getOffsetY = (frameIndex: number) => {
+            if (frameIndex !== 5) return 0;
+            return isMobile ? 30 : 40;
+        };
+
         if (imagesLoaded && currentImg) {
             const isTransitioning = transitionProgress > 0 && transitionProgress < 1;
 
             if (!isTransitioning && transitionProgress === 0) {
                 const ambientScale = 1 + withinBeatProgress * 0.1;
-                drawImageWithTransform(currentImg, ambientScale, getOffsetX(currentBeatAlign), 0, 0, 1);
+                drawImageWithTransform(
+                    currentImg,
+                    ambientScale,
+                    getOffsetX(currentBeatAlign),
+                    getOffsetY(currentFrameIndex),
+                    0,
+                    1
+                );
             } else if (isTransitioning) {
                 const slowEase = (t: number) => {
                     return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
@@ -403,16 +415,19 @@ const ScrollytellingHero: React.FC<ScrollytellingHeroProps> = ({ onComplete }) =
                 const currOffset = getOffsetX(currentBeatAlign);
                 const nextOffset = getOffsetX(nextBeatAlign);
                 const currentOffsetX = currOffset + (nextOffset - currOffset) * nextAlpha;
+                const currOffsetY = getOffsetY(currentFrameIndex);
+                const nextOffsetY = getOffsetY(nextFrameIndex);
+                const currentOffsetY = currOffsetY + (nextOffsetY - currOffsetY) * nextAlpha;
 
                 const particleIntensity = Math.sin(transitionProgress * Math.PI) * 0.7;
                 drawMorphParticles(transitionProgress, particleIntensity);
 
                 const exitAlpha = scrollProgress > 0.85 ? Math.max(0, 1 - (scrollProgress - 0.85) * 6.66) : 1;
-                drawImageWithTransform(currentImg, currentScale, currentOffsetX, 0, 0, currentAlpha * exitAlpha);
+                drawImageWithTransform(currentImg, currentScale, currentOffsetX, currentOffsetY, 0, currentAlpha * exitAlpha);
 
                 if (nextImg && currentFrameIndex !== nextFrameIndex && nextAlpha > 0.001) {
                     const exitAlpha = scrollProgress > 0.85 ? Math.max(0, 1 - (scrollProgress - 0.85) * 6.66) : 1;
-                    drawImageWithTransform(nextImg, nextScale, currentOffsetX, 0, 0, nextAlpha * exitAlpha);
+                    drawImageWithTransform(nextImg, nextScale, currentOffsetX, currentOffsetY, 0, nextAlpha * exitAlpha);
                 }
             } else {
                 const targetImg = currentImg;
@@ -421,7 +436,14 @@ const ScrollytellingHero: React.FC<ScrollytellingHeroProps> = ({ onComplete }) =
 
                 if (targetImg) {
                     const exitAlpha = scrollProgress > 0.85 ? Math.max(0, 1 - (scrollProgress - 0.85) * 6.66) : 1;
-                    drawImageWithTransform(targetImg, ambientScale, getOffsetX(currentBeatAlign), 0, 0, exitAlpha);
+                    drawImageWithTransform(
+                        targetImg,
+                        ambientScale,
+                        getOffsetX(currentBeatAlign),
+                        getOffsetY(currentFrameIndex),
+                        0,
+                        exitAlpha
+                    );
                 }
             }
         } else {

@@ -1,7 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const SplashScreen: React.FC = () => {
     const [isVisible, setIsVisible] = useState(true);
@@ -16,51 +17,61 @@ const SplashScreen: React.FC = () => {
         "b2_hero" | "b2_grid" |
         "complete" | "none"
     >("intro");
+    const pathname = usePathname();
+    const timersRef = useRef<NodeJS.Timeout[]>([]);
+    const finalTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-    useEffect(() => {
-        const hasSeenSplash = sessionStorage.getItem("mevreon_splash_seen");
-        if (hasSeenSplash) {
-            setShouldRender(false);
-            return;
+    const sequence = [
+        { s: "a1_hero", d: 400 },
+        { s: "a1_grid", d: 1600 },
+        { s: "a2_hero", d: 2200 },
+        { s: "a2_grid", d: 3400 },
+        { s: "a3_hero", d: 4000 },
+        { s: "a3_grid", d: 5200 },
+        { s: "clear_a", d: 6000 },
+        { s: "bridge_header", d: 6300 },
+        { s: "b1_hero", d: 9300 },
+        { s: "b1_grid", d: 10500 },
+        { s: "b2_hero", d: 11100 },
+        { s: "b2_grid", d: 12300 },
+        { s: "complete", d: 13100 }
+    ];
+
+    const clearTimers = () => {
+        timersRef.current.forEach(clearTimeout);
+        timersRef.current = [];
+        if (finalTimerRef.current) {
+            clearTimeout(finalTimerRef.current);
+            finalTimerRef.current = null;
         }
+    };
 
+    const startSequence = () => {
+        clearTimers();
+        setStage("intro");
+        setShouldRender(true);
         setIsVisible(true);
 
-
-        const sequence = [
-            { s: "a1_hero", d: 400 },
-            { s: "a1_grid", d: 1600 },
-            { s: "a2_hero", d: 2200 },
-            { s: "a2_grid", d: 3400 },
-            { s: "a3_hero", d: 4000 },
-            { s: "a3_grid", d: 5200 },
-            { s: "clear_a", d: 6000 },
-            { s: "bridge_header", d: 6300 },
-            { s: "b1_hero", d: 9300 },
-            { s: "b1_grid", d: 10500 },
-            { s: "b2_hero", d: 11100 },
-            { s: "b2_grid", d: 12300 },
-            { s: "complete", d: 13100 }
-        ];
-
-        const timers = sequence.map(item =>
+        timersRef.current = sequence.map(item =>
             setTimeout(() => setStage(item.s as any), item.d)
         );
 
-        const finalTimer = setTimeout(() => {
+        finalTimerRef.current = setTimeout(() => {
             setIsVisible(false);
             setTimeout(() => {
                 setShouldRender(false);
-                sessionStorage.setItem("mevreon_splash_seen", "true");
                 document.documentElement.classList.add('splash-seen');
             }, 1000);
         }, 14100);
+    };
+
+    useEffect(() => {
+        startSequence();
 
         return () => {
-            timers.forEach(clearTimeout);
-            clearTimeout(finalTimer);
+            clearTimers();
         };
-    }, []);
+    }, [pathname]);
 
     if (!shouldRender) return null;
 
