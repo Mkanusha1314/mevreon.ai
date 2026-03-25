@@ -148,7 +148,7 @@ export default function Home() {
         {
             title: "THE OMNITWIN ENGINE",
             category: "Automated Biological Intelligence",
-            image: "/Photos/AI Mevreon Platformb1.jpeg",
+            image: "/Photos/AI Mevreon Platformb2.jpeg",
             description: "From static data to dynamic life. Automating the creation of patient-specific digital twins.",
             pillars: [
                 { title: "Ingest", desc: "EHR, imaging, omics" },
