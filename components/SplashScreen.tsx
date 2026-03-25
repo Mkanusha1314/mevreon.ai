@@ -183,7 +183,7 @@ const SplashScreen: React.FC = () => {
                             `} style={{ transform: 'translate3d(0,0,0)' }}>
                                 <div className={`relative flex-1 border border-white/20 rounded-sm overflow-hidden bg-[#0A0F1A]/80 shadow-[0_0_20px_rgba(6,182,212,0.1)] animate-[float_7s_ease-in-out_infinite_0.5s] glow-pulse backdrop-blur-md transition-all duration-[1200ms] ${stage === "b1_hero" ? "lens-shutter" : "light-sweep"}`}>
                                     <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#06b6d4_1px,transparent_1px)] bg-[size:10px_10px]" />
-                                    <Image src="/Photos/AI Mevreon Platfsormb1.jpeg" alt="Lower Base B1" fill className="object-contain scale-x-110" priority />
+                                    <Image src="/Photos/AI Mevreon Platformb1.jpeg" alt="Lower Base B1" fill className="object-contain scale-x-110" priority />
                                     <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-cyan-400/60" />
                                     <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-cyan-400/60" />
                                     <div className="absolute bottom-2 left-2 text-[8px] text-cyan-400 font-mono opacity-40"></div>
